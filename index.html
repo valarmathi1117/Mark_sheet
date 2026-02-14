@@ -1,125 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Marksheet</title>
+    <meta charset="UTF-8">
+    <title>My Portfolio</title>
+
     <style>
         body {
             font-family: Arial, sans-serif;
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 15px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            background-color: #f9f9f9;
+            margin: 0;
         }
-        h2 {
-            text-align: center;
-            margin-bottom: 20px;
-            color: #333;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 15px;
-        }
-        th, td {
-            border: 1px solid #888;
-            padding: 10px;
-            text-align: center;
-        }
-        th {
-            background-color: #444;
+
+        header {
+            background: black;
             color: white;
+            text-align: center;
+            padding: 20px;
         }
-        .student-info td {
-            text-align: left;
+
+        section {
+            padding: 20px;
+        }
+
+        .skills span {
+            background: gray;
+            margin: 5px;
+            padding: 8px 12px;
+            display: inline-block;
+            border-radius: 5px;
+        }
+
+        button {
+            background: black;
+            color: white;
+            padding: 10px 15px;
             border: none;
-            padding: 5px 10px;
+            cursor: pointer;
         }
-        .total-row {
-            font-weight: bold;
-            background-color: #eee;
+
+        button:hover {
+            background: gray;
+        }
+
+        footer {
+            background: black;
+            color: white;
+            text-align: center;
+            padding: 10px;
         }
     </style>
 </head>
+
 <body>
-    <h2>Student Marksheet</h2>
 
-    <table class="student-info">
-        <tr>
-            <td><strong>Name:</strong> Valarmathi</td>
-            <td><strong>Class:</strong> 10</td>
-        </tr>
-        <tr>
-            <td><strong>Roll Number:</strong> 47</td>
-            <td><strong>Session:</strong> 2024</td>
-        </tr>
-    </table>
+<header>
+    <h1>Valarmathi S</h1>
+    <p> Aspiring Web Developer</p>
+</header>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Subject</th>
-                <th>Max Marks</th>
-                <th>Marks Obtained</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Mathematics</td>
-                <td>100</td>
-                <td id="math">71</td>
-            </tr>
-            <tr>
-                <td>Science</td>
-                <td>100</td>
-                <td id="science">88</td>
-            </tr>
-            <tr>
-                <td>English</td>
-                <td>100</td>
-                <td id="english">90</td>
-            </tr>
-            <tr>
-                <td>tamil</td>
-                <td>100</td>
-                <td id="tamil">94</td>
-            </tr>
-            <tr>
-                <td>Social</td>
-                <td>100</td>
-                <td id="Social">95</td>
-            </tr>
-            <tr class="total-row">
-                <td>Total</td>
-                <td>500</td>
-                <td id="total"></td>
-            </tr>
-            <tr class="total-row">
-                <td>Percentage</td>
-                <td colspan="2" id="percentage"></td>
-            </tr>
-        </tbody>
-    </table>
+<section>
+    <h2>About Me</h2>
+    <p>
+        I am a CSE student. I know HTML, CSS, JavaScript-basics.
+        I am interested in building real-time applications.
+    </p>
 
-    <script>
-        // Get marks from the table
-        const marks = [
-            parseInt(document.getElementById('math').textContent),
-            parseInt(document.getElementById('science').textContent),
-            parseInt(document.getElementById('english').textContent),
-            parseInt(document.getElementById('tamil').textContent),
-            parseInt(document.getElementById('Social').textContent),
-        ];
+    <button onclick="showMessage()">Hire Me</button>
+    <h2>Skills</h2>
+    <div class="skills">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript-Basics</span>
+        <span>Java-Basics</span>
+    </div>
+</section>
 
-        const totalMarks = marks.reduce((a, b) => a + b, 0);
-        const maxTotal = 500;
-        const percentage = (totalMarks / maxTotal) * 100;
+<footer>
+    <p>© 2026 | Valarmathi S</p>
+</footer>
 
-        document.getElementById('total').textContent = totalMarks;
-        document.getElementById('percentage').textContent = percentage.toFixed(2) + '%';
-    </script>
+<script>
+    function showMessage() {
+        alert("Thank you for visiting my portfolio!");
+    }
+</script>
+
 </body>
 </html>
